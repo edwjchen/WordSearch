@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.9.4/cytoscape.min.js" integrity="sha256-yvhiWj8VRHJV4JL+RmFcz3U2E2tu0bdjJ175tlvhSnE=" crossorigin="anonymous"></script>
+		<script src="https://unpkg.com/webcola/WebCola/cola.min.js"></script>		
+		<script src="cytoscape-cola.js"></script>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div id="cy"> </div>
+	</body>
+	<script>
+		var cy = cytoscape({
+		  container: document.getElementById('cy'), // container to render in
+		  elements: [ // list of graph elements to start with
+		    { // node a
+		      data: { id: 'a' }
+		    },
+		    { // node b
+		      data: { id: 'b' }
+		    },
+		    { // node a
+		      data: { id: 'c' }
+		    },
+		    { // node b
+		      data: { id: 'd' }
+		    },
+		    { // node a
+		      data: { id: 'e' }
+		    },
+		    { // node b
+		      data: { id: 'f' }
+		    },
+		    { // node a
+		      data: { id: 'g' }
+		    },
+		    { // node b
+		      data: { id: 'h' }
+		    },
+		    { // edge ab
+		      data: { id: 'ab', source: 'a', target: 'b' }
+		    },
+		    { // edge ab
+		      data: { id: 'cd', source: 'c', target: 'd' }
+		    },
+		    { // edge ab
+		      data: { id: 'ad', source: 'a', target: 'd' }
+		    },
+		  	{ // edge ab
+		      data: { id: 'bd', source: 'b', target: 'd' }
+		    },
+		    { // edge ab
+		      data: { id: 'ea', source: 'e', target: 'a' }
+		    },
+		    { // edge ab
+		      data: { id: 'fa', source: 'f', target: 'a' }
+		    },
+		    { // edge ab
+		      data: { id: 'gd', source: 'g', target: 'd' }
+		    },
+		  	{ // edge ab
+		      data: { id: 'hb', source: 'h', target: 'b' }
+		    }
+		  ],
+		  style: [ // the stylesheet for the graph
+		    {
+		      selector: 'node',
+		      style: {
+		        'background-color': '#333333',
+		        'label': 'data(id)',
+		        'border-color': '#FFFFFF',
+		        'border-width': 1,
+		        'color': '#0077B5',
+		        'font-size': '8%',
+		        'overlay-color':'#888888'
+		      }
+		    },
+		    {
+		      selector: 'edge',
+		      style: {
+		        'width': 1,
+		        'line-color': '#FFFFFF',
+		      }
+		    }
+		  ],
+		  layout: {
+		    name: 'cola',
+			maxDist: 10
+		  }
+		});
+	cy.on('click', 'node', function(evt){
+	    console.log( 'clicked ' + this.id() );
+	});
+	</script>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "wordsearch",
+  "version": "1.0.0",
+  "description": "Word Search Game from Google Games!",
+  "main": "cytoscape-cola.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwjchen/WordSearch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwjchen/WordSearch/issues"
+  },
+  "homepage": "https://github.com/edwjchen/WordSearch#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
